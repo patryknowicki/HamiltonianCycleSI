@@ -1,4 +1,4 @@
-package path; // tworzenie sciezki
+package path; // tworzenie sciezkiPath tworzenie linii łączącej węzły na układzie współrzędnych (sciezka Hamiltona)
 
 import tools.Helper;
 
@@ -83,6 +83,7 @@ public class Path {
         for (Map.Entry<Integer, Node> entry : this.availableNodes.entrySet())
             //mapy bo tablicach nie mozna ustawic wlasnych kluczy
             // (definiujemy ze for dotyczy mapy integer i wartosci ktora jest obiektem klasy node , entry to pojedynczy wezel
+            // MAPA Z KLUCZAMI KTORE SA LICZBA CALKOWITA
             //skad  bierzemy wezly do mapy
         {
             tempLength = calculateSubPath(this.lastUsedNode, entry.getValue()); //wartosc z punktu do puntu

@@ -1,4 +1,4 @@
-package path;
+package path; //Node pojedynczy wezel – pojemnik na współrzędne x , y
 
 public class Node {
     private int x;
