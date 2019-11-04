@@ -5,7 +5,7 @@ import java.io.IOException;
 public class Helper {
     public static void clearConsole() throws IOException, InterruptedException
     {
-        if (Config.getOS().equals("Windows")) {
+        if (Config.getOS().equals("Windows")) {  //w zaleznosci od systemu wpisuje -> config / jeszeli windows odpala proces builder
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         } else {
             System.out.print("\033[H\033[2J");

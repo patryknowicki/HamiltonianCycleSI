@@ -15,6 +15,8 @@ public class Graph {
     public Graph() throws IOException, InterruptedException
     {
         boolean exitVar = false;
+        //ciezko wwyolac konstruktor, zamiast rekurencji do metody petla, jezeli w try zadziala to exit var na true
+        //jesli nie to wywali mu blad
 
         do
         {
@@ -25,15 +27,15 @@ public class Graph {
                 int i = Integer.parseInt(br.readLine());
                 this.nodes = new Node[i];
 
-                for (int j = 0; j < i; j++)
+                for (int j = 0; j < i; j++) //tablica z wezlami(node)
                 {
                     readNodeCoordinates(j);
                 }
 
-                this.path = new Path(this.nodes);
-                this.path.ChoseStartingNode(this.nodes);
+                this.path = new Path(this.nodes); //tworzymy sciezke i wrzucamy utworzone wezly (Path)
+                this.path.ChoseStartingNode(this.nodes); // ktory startujemy (Path)
 
-                exitVar = true;
+                exitVar = true; //nie spelnilo iwec konczy petle
             }
             catch (Exception e)
             {
@@ -42,7 +44,7 @@ public class Graph {
         } while (!exitVar);
     }
 
-    private void readNodeCoordinates(int i) throws IOException, InterruptedException
+    private void readNodeCoordinates(int i) throws IOException, InterruptedException //pozycja wezlow w tablicy
     {
         try
         {
@@ -62,7 +64,7 @@ public class Graph {
 
     public void displayPath() throws IOException, InterruptedException
     {
-        this.path.calculateOptimalPath();
-        this.path.displayPath();
+        this.path.calculateOptimalPath(); //oblicza sie sciezka
+        this.path.displayPath(); //wyswietla wynik
     }
 }
